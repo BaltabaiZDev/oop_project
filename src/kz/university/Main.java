@@ -73,7 +73,7 @@ public class Main {
         AcademicReport report = manager.createAcademicReport();
         report.print();
 
-        ResearchPaper p1 = new ResearchPaper("P1", "AI in Education", "IEEE Access", "10.1109/ACCESS.2026.000001", 10, 45, LocalDate.of(2026, 2, 15));
+        ResearchPaper p1 = new ResearchPaper("P1", "AI in Education", "IEEE Access", "10.1109/ACCESS.2025.11368348", 10, 45, LocalDate.of(2026, 2, 15));
         ResearchPaper p2 = new ResearchPaper("P2", "Cybersecurity in University Systems", "Springer Journal", "10.1007/S001.2025.000002", 16, 20, LocalDate.of(2025, 11, 10));
 
         teacher.publishPaper(p1);

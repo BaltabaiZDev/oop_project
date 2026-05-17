@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import kz.university.enums.TeacherTitle;
 import kz.university.enums.UserRole;
+import kz.university.exceptions.IllegalMarkException;
 import kz.university.interfaces.Messageable;
 import kz.university.interfaces.PaperComparator;
 import kz.university.interfaces.Ratable;
@@ -40,10 +41,17 @@ public class Teacher extends Employee implements Ratable, Messageable, Researche
     }
 
     public void putMark(Enrollment enrollment, Mark mark) {
+        if (mark.getAtt1() < 0 || mark.getAtt2() < 0 || mark.getFinalExam() < 0) {
+            throw new IllegalMarkException("Mark parts cannot be negative");
+        }
+
+        if (mark.getTotal() > 100) {
+            throw new IllegalMarkException("Total mark must not exceed 100");
+        }
+
         enrollment.setMark(mark);
         System.out.println("Mark was put: " + mark);
     }
-
     public List<Student> viewStudents(Course course) {
         List<Student> students = new ArrayList<>();
         for (Enrollment e : course.getEnrollments()) {

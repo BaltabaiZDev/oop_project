@@ -10,7 +10,7 @@ public abstract class User implements Serializable {
     private String password;
     private UserRole role;
 
-    protected User(String id, String login, String password, UserRole role) {
+    protected User(String  id, String login, String password, UserRole role) {
         this.id = id;
         this.login = login;
         this.password = password;

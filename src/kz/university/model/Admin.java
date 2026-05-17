@@ -21,6 +21,7 @@ public class Admin extends Employee implements Messageable {
         userRepository.delete(user.getId());
     }
 
+
     public void updateUser(User user) {
         userRepository.save(user);
     }

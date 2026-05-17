@@ -4,6 +4,7 @@ import kz.university.enums.UserRole;
 
 public abstract class Employee extends User {
     private String firstName;
+
     private String lastName;
     private double salary;
 
